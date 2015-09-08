@@ -224,21 +224,22 @@ gulp.task('styles-grid', function() {
 gulp.task('closure', function() {
   return gulp.src(SOURCES)
     .pipe(closureCompiler({
-      compilerPath: 'bower_components/closure-compiler/compiler.jar',
-      fileName: './dist/mdl.closure.min.js',
+      compilerPath: 'node_modules/closure-compiler/lib/vendor/compiler.jar',
+      fileName: 'material.closure.min.js',
       compilerFlags: {
-        // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
+        // jscs:disable closureCamelCase
         compilation_level: 'ADVANCED_OPTIMIZATIONS',
         warning_level: 'VERBOSE'
-        // jscs:enable requireCamelCaseOrUpperCaseIdentifiers
+        // jscs:enable closureCamelCase
       }
-    }));
+    }))
+    .pipe(gulp.dest('./dist'));
 });
 
 // Concatenate And Minify JavaScript
 gulp.task('scripts', ['jscs', 'jshint'], function() {
   return gulp.src(SOURCES)
-    .pipe(uniffe())
+    .pipe($.if(/mdlComponentHandler\.js/, $.util.noop(), uniffe()))
     .pipe($.sourcemaps.init())
     // Concatenate Scripts
     .pipe($.concat('material.js'))

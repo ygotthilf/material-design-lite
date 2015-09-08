@@ -9,11 +9,13 @@
   "requireCamelCaseOrUpperCaseIdentifiers": null,
   "additionalRules": ["utils/jscs-rules/*.js"],
   "closureCamelCase": true,
+  "requireDotNotation": false,
   "jsDoc": {
     "checkAnnotations": {
       "preset": "closurecompiler",
       "extra": {
-        "type": true
+        "type": true,
+        "suppress": true
       }
     },
     "checkTypes": "strictNativeCase",
