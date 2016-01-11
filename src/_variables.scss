@@ -73,8 +73,8 @@ $performance_font: 'Helvetica', 'Arial', sans-serif !default;
 *
 **/
 
-@import "color-definitions";
-@import "functions";
+@import "_color-definitions.scss";
+@import "_functions.scss";
 
 /* ==========  IMAGES  ========== */
 $image_path: '/images' !default;

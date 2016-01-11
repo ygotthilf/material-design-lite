@@ -17,36 +17,36 @@
 /* Material Design Lite */
 
 // Variables and mixins
-@import "variables";
-@import "mixins";
+@import "_variables.scss";
+@import "_mixins.scss";
 
 // Resets and dependencies
-@import "resets/resets";
-@import "typography/typography";
+@import "resets/_resets.scss";
+@import "typography/_typography.scss";
 
 // Components
-@import "palette/palette";
-@import "ripple/ripple";
-@import "animation/animation";
-@import "badge/badge";
-@import "button/button";
-@import "card/card";
-@import "checkbox/checkbox";
-@import "data-table/data-table";
-@import "footer/mega_footer";
-@import "footer/mini_footer";
-@import "icon-toggle/icon-toggle";
-@import "list/list";
-@import "menu/menu";
-@import "progress/progress";
-@import "layout/layout";
-@import "radio/radio";
-@import "slider/slider";
-@import "snackbar/snackbar";
-@import "spinner/spinner";
-@import "switch/switch";
-@import "tabs/tabs";
-@import "textfield/textfield";
-@import "tooltip/tooltip";
-@import "shadow/shadow";
-@import "grid/grid";
+@import "palette/_palette.scss";
+@import "ripple/_ripple.scss";
+@import "animation/_animation.scss";
+@import "badge/_badge.scss";
+@import "button/_button.scss";
+@import "card/_card.scss";
+@import "checkbox/_checkbox.scss";
+@import "data-table/_data-table.scss";
+@import "footer/_mega_footer.scss";
+@import "footer/_mini_footer.scss";
+@import "icon-toggle/_icon-toggle.scss";
+@import "list/_list.scss";
+@import "menu/_menu.scss";
+@import "progress/_progress.scss";
+@import "layout/_layout.scss";
+@import "radio/_radio.scss";
+@import "slider/_slider.scss";
+@import "snackbar/_snackbar.scss";
+@import "spinner/_spinner.scss";
+@import "switch/_switch.scss";
+@import "tabs/_tabs.scss";
+@import "textfield/_textfield.scss";
+@import "tooltip/_tooltip.scss";
+@import "shadow/_shadow.scss";
+@import "grid/_grid.scss";

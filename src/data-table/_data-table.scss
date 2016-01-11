@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-@import "../variables";
-@import "../mixins";
+@import "../_variables.scss";
+@import "../_mixins.scss";
 
 .mdl-data-table {
   position: relative;
@@ -95,7 +95,7 @@
       bottom: 8px;
       left: 24px;
     }
-    
+
     .mdl-data-table__header--sorted-ascending, .mdl-data-table__header--sorted-descending {
       color: $data-table-header-sorted-color;
       &:before {
@@ -103,11 +103,11 @@
         @include typo-icon;
       }
     }
-    
+
     .mdl-data-table__header--sorted-ascending:before {
       content: "\e5d8";
     }
-    
+
     .mdl-data-table__header--sorted-descending:before {
       content: "\e5db";
     }

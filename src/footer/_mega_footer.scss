@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-@import "../variables";
-@import "../mixins";
+@import "../_variables.scss";
+@import "../_mixins.scss";
 
 .mdl-mega-footer {
   padding: $footer-min-padding $footer-padding-sides;

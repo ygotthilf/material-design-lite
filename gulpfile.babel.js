@@ -32,6 +32,9 @@ import browserSync from 'browser-sync';
 import through from 'through2';
 import swig from 'swig';
 import gulp from 'gulp';
+import postcss from 'gulp-postcss';
+import postcssScss from 'postcss-scss';
+import precss from 'precss';
 import closureCompiler from 'gulp-closure-compiler';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import uniffe from './utils/uniffe.js';
@@ -170,13 +173,16 @@ gulp.task('styles', () => {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src('src/material-design-lite.scss')
     // Generate Source Maps
-    .pipe($.sourcemaps.init())
-    .pipe($.sass({
-      precision: 10,
-      onError: console.error.bind(console, 'Sass error:')
-    }))
-    .pipe($.cssInlineImages({webRoot: 'src'}))
-    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+    //.pipe($.sourcemaps.init())
+    //.pipe($.sass({
+    //  precision: 10,
+    //  onError: console.error.bind(console, 'Sass error:')
+    //}))
+    .pipe(postcss([
+      precss(),
+    ], {syntax: postcssScss}))
+    //.pipe($.cssInlineImages({webRoot: 'src'}))
+    //.pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp'))
     // Concatenate Styles
     .pipe($.concat('material.css'))
@@ -186,7 +192,7 @@ gulp.task('styles', () => {
     .pipe($.if('*.css', $.csso()))
     .pipe($.concat('material.min.css'))
     .pipe($.header(banner, {pkg}))
-    .pipe($.sourcemaps.write('.'))
+    //.pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'styles'}));
 });
